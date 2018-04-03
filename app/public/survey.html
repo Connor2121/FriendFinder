@@ -204,12 +204,15 @@
         </div>
     </footer>
 
-    <div12 id="matchModal" class="modal">
-        <div class="modal-content">
+    <div id="matchModal" class="modal fade" role="dialog" style="display: none;">
+        <div class="modal-dialog">
             <h4>Your closest match</h4>
             <div class="divider"></div>
             <h6 id="match"></h6>
             <img id="matchPhoto" class="materialboxed" width="500" src="">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 
@@ -239,8 +242,8 @@
             var currentURL = window.location.origin;
             $.post(currentURL = '/api/friends', newFriend, function(data) {
 
-                $('#match').text(data.friendName);
-                $('#matchPhoto').attr('src', data.friendPhoto);
+                $('#match').text(data.name);
+                $('#matchPhoto').attr('src', data.photo);
                 $('#matchModal').modal('toggle');
 
                 });

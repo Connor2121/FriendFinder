@@ -1,6 +1,6 @@
 var friendData = [{
-    "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Arnold",
+    "photo":"https://nyppagesix.files.wordpress.com/2017/03/arnold.jpg?quality=90&strip=all&w=618&h=410&crop=1",
     "scores":[
         5,
         1,
@@ -16,7 +16,7 @@ var friendData = [{
   },
   {
     "name":"Chester",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"http://img.gagdaily.com/uploads/posts/sad/2013/0000990e_big.jpg",
     "scores":[
         5,
         5,
