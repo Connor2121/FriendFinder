@@ -20,8 +20,9 @@ app.post('/api/friends', function(req, res) {
         photo: friendPhoto = ''
     }
     
+    var bestScore= Infinity;
 
-    //loop through api objects
+    //loop through api objects array
     for(var i = 0; i < friendData.length; i++) {
         var matchDiff = 0;
 
@@ -30,12 +31,17 @@ app.post('/api/friends', function(req, res) {
            matchDiff += Math.abs(userMatchData[x] - friendData[i].scores[x]);
         }
         console.log(matchDiff);
-        // compares difference to see if the friend is mose alike
-        if(Math.min(matchDiff)) {
-
+        
+        // compares difference to see if the friend is mose alike 
+        //as the loop progresses it compares th difference until it finds a friend in api with a lower difference
+        
+        if(matchDiff < bestScore) {
+            bestScore = matchDiff;
+            newFriend.name = friendData[i].name;
+            newFriend.photo = friendData[i].photo;
         }
+        
     };
-    
     friendData.push(userData);
     res.json(newFriend);
 });
