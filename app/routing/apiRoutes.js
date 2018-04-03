@@ -12,7 +12,7 @@ app.post('/api/friends', function(req, res) {
     var userData = req.body;
     var userMatchData = userData.scores;
 
-    var totalDiff = 1000;
+    
     // will hold match
      
     var newFriend = {
@@ -30,15 +30,13 @@ app.post('/api/friends', function(req, res) {
            matchDiff += Math.abs(userMatchData[x] - friendData[i].scores[x]);
         }
         console.log(matchDiff);
+        // compares difference to see if the friend is mose alike
+        if(Math.min(matchDiff)) {
 
-        if(matchDiff < totalDiff) {
-            totalDiff = matchDiff;
-            newFriend.name = friendData[i].name;
-            newFriend.photo = friendData[i].photo;
         }
-    }
+    };
     
-    friendData.push(req.body);
+    friendData.push(userData);
     res.json(newFriend);
 });
 
