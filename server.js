@@ -7,6 +7,8 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+app.use(express.static(__dirname + '/public'));
+
 var PORT = process.env.PORT || 3000;
 
 require('./app/routing/htmlRoutes.js')(app);
