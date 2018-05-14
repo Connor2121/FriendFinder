@@ -26,7 +26,7 @@ app.post('/api/friends', function(req, res) {
     for(var i = 0; i < friendData.length; i++) {
         var matchDiff = 0;
 
-        // loop through user survey score results to compare to friends in database
+        // loop through user survey score results to compare to friends stored in app
         for( var x = 0; x < userMatchData.length; x++) {
            matchDiff += Math.abs(userMatchData[x] - friendData[i].scores[x]);
         }
@@ -42,6 +42,8 @@ app.post('/api/friends', function(req, res) {
         }
         
     };
+    
+    // push to data directory
     friendData.push(userData);
     res.json(newFriend);
 });
